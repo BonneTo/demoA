@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../tool/vue.min.js"></script>
+</head>
+<body>
+    <p>
+        v-if指令:
+            根据seen的值是否为true决定是否插入span元素 <br>
+        v-else指令：<br>
+        v-else-if指令：<br>
+        v-show指令：
+            根据条件展示元素<br>
+        v-for指令：
+            数组：语法为 site/(site,index)(数组元素迭代别名) in sites(源数据数组)<br>
+            对象：(vlue,key,index)/vlue in object<br>
+            还可以迭代整数(10)
+    </p>
+    <div id="app">
+        <span v-if="seen">为true显示</span>
+        <span v-else="seen">为false显示</span>
+        <p >{{message}}</p>
+        <p v-once>这个值不会改变：{{mesg}}</p>
+         <!--{{}} 会将数据解释为普通文本，而v-html指令输出html -->
+        <p v-html="message"></p>
+        
+    </div>
+    <div id="app2">
+        <p v-for="(site,index) in arr">{{index}}.{{site.name}}</p>
+        <!-- 迭代对象（object） -->
+        <p v-for="(vlue,key,index) in obj">{{index}}.{{key}}:{{vlue}}</p>
+        <!-- 计算属性 -->
+
+    </div>
+    <script>
+        // Vue构造器中参数，el（元素id）、data（用于定义属性）和methods（定义函数，return可以返回值），｛｛｝｝用于输出属性和返回值
+        data = {
+                message: "hello world!",
+                url: "www.baidu.com",
+                mesg: "呵呵呵呵",
+                seen: false
+            }
+        var m = new Vue ({
+            el:"#app",
+            data: data
+        })
+        data.mesg = "ssss";
+// =================================================================
+        arr =[{name:"aaaa"},{name:"SSSS"},{name:"CCCCC"}]
+        var vm =new Vue({
+            el:"#app2",
+            data: {
+                arr: arr
+                ,obj:{name:"ttttt",age:18,url:"www.baidu.com"}
+                ,message:"qwertyuiop"
+            },
+            computed:{
+                reversedMessage: function () {
+                    return this.message.split("").reverse().join("")
+                }
+            }
+        })
+// ===================================================================
+
+    </script>
+    <!-- 样式 -->
+    <style>
+        #app{
+            font-size: 2em;
+            color: red;
+        }
+    </style>
+</body>
+</html>

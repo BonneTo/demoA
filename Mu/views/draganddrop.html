@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="api.js"></script>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .box{
+        width: 50em;
+        height: 37.5em;
+        border: 0.0625em solid black;
+        margin: .4em auto;
+        /* background-image: url("../source/image3.jpg") ; */
+    }
+    #box1{
+        display: none;
+    }
+    .box2{
+        width: 5em;
+        height: 3.75em;
+        overflow: hidden;
+        float: right;
+        margin-top: -15em;
+        margin-right: 5em;
+        outline: 0.0625em solid red;
+        
+    }
+    .boxd{
+        width: 5em;
+        height: 3.75em;
+        outline: 0.0625em solid red;
+        float: left;
+    }
+    img{
+        width: 5em;
+        height: 3.75em;
+        float: left;
+    }
+    .image{
+        width: 50em;
+        height: 37.5em;
+    }
+    button{
+        margin: 4em 46%;
+    }
+
+</style>
+<body>
+    <button id="btn" onclick="clicking()">更换图片</button>
+    <div class="box" id="box" onclick="fun1()"><img id="image" class="image" src="../source/image1.jpg"></div>
+    <div class="box" id="box1">
+        <div id="div1" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div2" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div3" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div4" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div5" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div6" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div7" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div8" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div9" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div10" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+        <div id="div11" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div12" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div13" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div14" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div15" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div16" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div17" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div18" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div19" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div20" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+        <div id="div21" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div22" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div23" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div24" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div25" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div26" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div27" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div28" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div29" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div30" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+        <div id="div31" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div32" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div33" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div34" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div35" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div36" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div37" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div38" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div39" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div40" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+        <div id="div41" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div42" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div43" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div44" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div45" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div46" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div47" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div48" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div49" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div50" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+        <div id="div51" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div52" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div53" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div54" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div55" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div56" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div57" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div58" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div59" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div60" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+        <div id="div61" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div62" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div63" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div64" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div65" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div66" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div67" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div68" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div69" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div70" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+        <div id="div71" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div72" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div73" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div74" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div75" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div76" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div77" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div78" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div79" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div80" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+        <div id="div81" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div82" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div83" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div84" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div85" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div86" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div87" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div88" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div89" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div90" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+        <div id="div91" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div92" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div93" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div94" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div95" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div96" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div97" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div98" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div99" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div100" class="boxd" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    </div>
+    <div class="box2" id="box2div1">
+            <img id="drag1" src="../source/image1.jpg" draggable="true" ondragstart="drag(event)">
+            <img id="drag2" src="../source/image3.jpg" draggable="true" ondragstart="drag(event)">
+            <img id="drag3" src="../source/image2.jpg" draggable="true" ondragstart="drag(event)">
+    </div>
+</body>
+<script>
+    function allowDrop(ev) {
+        ev.preventDefault();
+    }
+    function drag(ev) {
+        ev.dataTransfer.setData("Text",ev.target.id)
+    }
+    function drop(ev) {
+        if (ev.target.id.substring(0,3) == "div") {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("Text");
+            ev.target.appendChild(document.getElementById(data));
+            console.log(document.getElementById("box2div1"))
+        }else{
+            return
+        }
+    }
+
+    function fun1() {
+      document.getElementById("box").style.display = "none";
+      document.getElementById("box1").style.display = "block";
+      var num = randomOrdering(50)
+      console.log(num) 
+    }
+    var n=2;
+    function clicking() {
+        document.getElementById("box").style.display = "block";
+        document.getElementById("box1").style.display = "none";  
+        if (0<n && n<4) { 
+            document.getElementById("image").src = "../source/image" + n + ".jpg";
+            document.getElementById("drag1").src = "../source/image" + n + "/image.jpg";
+            n++;
+        }else {
+            n=2;
+            document.getElementById("image").src = "../source/image1.jpg";
+            document.getElementById("drag1").src = "../source/image1/image.jpg";
+        }
+    }
+
+
+
+
+    
+</script>
+</html>

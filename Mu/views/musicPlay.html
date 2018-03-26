@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="api.js"></script>
+    <style>
+        body{
+            background-color: rgba(0, 0,0,0.9);
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        .banner{
+            width: 375px;
+            height: 665px;
+            margin: 0 auto;
+            margin-top: 1px;
+            outline: 1px solid rgba(248, 129, 244, 0.8)
+        }
+        .fenge{
+            height: 1px;
+            width: 375px;
+            background-color: rgba(193, 193, 193,0.5);
+        }
+        .musicList{
+            height: 30px;
+        }
+        .boxMusicName{
+            width: 315px;
+            height: 50px;
+            margin-left: 30px;
+            line-height: 50px;
+            text-align: center;
+        }
+        .boxMusicBox{
+            width: 375px;
+            height: 430px;
+            margin-top: 10px;
+            padding-top: 50px;
+        }
+        .musicSrc{
+            color: rgba(99, 247, 160, 0.856);            
+            width: 215px;
+            height: 40px;
+            margin-left: 75px;
+            text-align: center;
+            line-height: 40px;
+        }
+        .image{
+            width: 276px;
+            height: 276px;
+            margin: 0 auto;
+            border-radius: 138px;
+            background-image: url("D:/Server/Mu/source/image1.jpg");
+            margin-bottom: 50px;
+        }
+        .load{
+            width: 375px;
+            height: 35px;
+        }
+        .loading{
+            width: 285px;
+            height: 2px;
+            background-color: rgba(193,193,193,0.4);
+            float: left;
+            margin-top: 8px;
+            margin-left: 4px;
+            border-radius: 1px;
+        }
+        .x{
+            height: 10px;
+        }
+        .filling{
+            width: 0px;
+            height: 2px;
+            background-color: lightgreen;
+            border-radius: 1px;
+        }
+        .time1{
+            color: white;
+            margin-left: 8px;
+            font-size: 0.7em;
+            float: left;
+            width: 34px;
+        }
+        .time2{
+            width: 34px;   
+            color: white;
+            margin-right: 5px;
+            font-size: 0.7em;
+            float: left;
+            margin-left: 5px;
+        }
+        .player{
+            width: 375px;
+            height: 45px;
+            
+            
+        }
+        .left{
+            width: 30px;
+            height: 30px;
+            border-radius: 15px;
+            background-color: lightgreen;
+            float: left;
+            margin-left: 71px;
+            margin-top: 8px;
+            text-align: center;
+            line-height: 30px;
+            color: rgba(172, 3, 166, 0.8)
+        }
+       pre{
+           display: none;
+       }
+       .input{
+           width: 200px;
+           background-color: #FFF;
+            color: #000;
+       }
+       button{
+           color: #000;
+       }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <audio id="audio" src="D:/Server/Mu/music/Kalimba.mp3">
+            <!-- <source src="../music/Kalimba.mp3"></source> -->
+            <!-- <source src="../music/MaidwiththeFlaxenHair.mp3"></source>
+            <source src="../music/SleepAway.mp3"></source> -->
+        </audio>
+        <div class="boxMusicName" id="muname"></div>
+        <div class="fenge"></div>
+        <div class="boxMusicBox">
+            <div id="musicSrc0" class="image">
+        
+            </div>
+            <div id="musicSrc8" class="musicSrc"></div>
+        </div>
+        <div class="fenge"></div>
+        <div class="load">
+            <div class="x"></div>
+            <div class="time1" id="time1">0:00</div>
+            <div class="loading">
+                <div class="filling" id="filling"></div>
+            </div>
+            <div class="time2" id="time2">0:00</div>
+        </div>
+        <div class="player">
+            <div class="left" id="left" onclick="clickLeft('aaa')">L</div>
+            <div class="left" id="play" onclick="clickPlay()">P</div>
+            <div class="left" id="right" onclick="clickRight()">R</div>
+        </div>
+    </div>
+<pre id="song1">
+    [ti:成都]
+    [ar:赵雷]
+    [al:无法长大]
+    [by:0]
+    [offset:0]
+    [00:01.34]成都
+    [00:02.09]
+    [00:03.96]作词：赵雷
+    [00:03.96]作曲：赵雷
+    [00:05.99]编曲：赵雷,喜子
+    [00:09.04]演唱：赵雷
+    [00:12.90]
+    [00:17.65]让我掉下眼泪的
+    [00:21.57]不止昨夜的酒
+    [00:25.82]让我依依不舍的
+    [00:29.62]不止你的温柔
+    [00:33.78]余路还要走多久
+    [00:37.64]你攥着我的手
+    [00:41.63]让我感到为难的
+    [00:45.47]是挣扎的自由
+    [00:49.20]
+    [00:51.90]分别总是在九月
+    [00:55.38]回忆是思念的愁
+    [00:59.46]深秋嫩绿的垂柳
+    [01:03.32]亲吻着我额头
+    [01:07.31]在那座阴雨的小城里
+    [01:11.44]我从未忘记你
+    [01:15.56]成都 带不走的 只有你
+    [01:21.76]
+    [01:22.81]和我在成都的街头走一走
+    [01:31.25]直到所有的灯都熄灭了也不停留
+    [01:38.88]你会挽着我的衣袖
+    [01:42.67]我会把手揣进裤兜
+    [01:46.56]走到玉林路的尽头
+    [01:50.45]坐在小酒馆的门口
+    [01:55.65]
+    [02:30.35]分别总是在九月
+    [02:34.31]回忆是思念的愁
+    [02:38.17]深秋嫩绿的垂柳
+    [02:42.48]亲吻着我额头
+    [02:46.66]在那座阴雨的小城里
+    [02:50.34]我从未忘记你
+    [02:53.78]成都 带不走的 只有你
+    [03:00.95]
+    [03:02.38]和我在成都的街头走一走
+    [03:10.13]直到所有的灯都熄灭了也不停留
+    [03:18.32]你会挽着我的衣袖
+    [03:21.99]我会把手揣进裤兜
+    [03:25.99]走到玉林路的尽头
+    [03:29.79]坐在小酒馆的门口
+    [03:36.36]
+    [03:38.40]和我在成都的街头走一走
+    [03:46.45]直到所有的灯都熄灭了也不停留
+    [03:54.27]和我在成都的街头走一走
+    [04:02.30]直到所有的灯都熄灭了也不停留
+    [04:10.29]你会挽着我的衣袖
+    [04:13.57]我会把手揣进裤兜
+    [04:17.56]走到玉林路的尽头
+    [04:21.77]坐在(走过)小酒馆的门口
+    [04:27.72]
+    [04:36.02]和我在成都的街头走一走
+    [04:43.67]直到所有的灯都熄灭了也不停留
+    [04:51.93]
+</pre>
+<!-- <button id="btn">点我复制</button> -->
+<!-- <input type="text" id="input" class="input"> -->
+</body>
+<script>
+
+var au= document.getElementById("audio");
+var muimg = document.getElementById("musicSrc0")
+var isPlay = false;
+function clickPlay(){
+    var time = duration("#audio")
+    var n= time%60,t = time%60;
+    if (n < 10) {
+        n = "0"+n;
+    }
+    document.getElementById("time2").innerHTML = parseInt(time/60)+":"+n;
+    
+    if (isPlay) {
+        au.pause();
+        imgPause();
+        clearAll()
+        show()
+    }
+    if (!isPlay) {
+        loadingBar("#audio")
+        countTime("#audio")
+        imgRotate("#musicSrc0")
+        au.play();
+        show()
+    }
+    isPlay = !isPlay;
+    console.log(isPlay)
+}
+// ************定时计数***********************************************************
+
+    function countTime(id) {
+        timer2 = setInterval(function () {
+            var time1 = document.getElementById("time1");
+            var time2 = document.getElementById("time2");
+            var cur = parseInt(document.querySelector(id).currentTime);
+            var temp = cur;
+            var minute = parseInt(temp / 60);
+            if (cur%60 < 10) {
+                time1.innerHTML = "" + minute + ":0" + cur % 60 + "";
+            }else{
+                time1.innerHTML = "" + minute + ":" + cur % 60 + "";
+            }
+            if ( time1 !=0  &&(time1.innerHTML == time2.innerHTML)) {
+                clearAll();
+                time1.innerHTML = "0:00";
+                time2.innerHTML = "0:00";
+                isPlay = false;
+            }
+        }, 1000)
+        
+    }
+//********清除所有定时器************************************************************
+   function clearAll() {
+        clearInterval(timer2);
+        clearInterval(timer)
+   } 
+// *******************************************************************************
+var arrMusic = [
+            "D:/Server/Mu/music/Kalimba.mp3", 
+            "D:/Server/Mu/music/MaidwiththeFlaxenHair.mp3",
+            "D:/Server/Mu/music/SleepAway.mp3"
+        ]
+var arrImage = [
+            "D:/Server/Mu/source/image1.jpg",
+            "D:/Server/Mu/source/image2.jpg",
+            "D:/Server/Mu/source/image3.jpg"
+]
+var index=0;
+function clickRight() {
+    document.getElementById("time1").innerHTML = "0:00";
+    document.getElementById("filling").style.width = 0;
+    index ++;
+    if (index < arrMusic.length) {
+        au.src = arrMusic[index];
+        // muimg.style.backgroundImage = arrImage[index]
+        au.load()
+        au.oncanplay = function () {
+            var time = duration("#audio")
+            var n = time % 60, t = time % 60;
+            if (n < 10) {
+               n = "0" + n;
+            }
+            document.getElementById("time2").innerHTML = parseInt(time / 60) + ":" + n;
+            muName()
+            if (isPlay) {
+                au.play()
+            } else {
+                au.pause()
+            }
+            show()
+       }  
+   }else if (index >= arrMusic.length) {
+        au.src = arrMusic[0]
+        index = 0;
+        au.load()
+        au.oncanplay = function () {
+            var times = duration("#audio")
+            var n = times % 60, t = times % 60;
+            if (n < 10) {
+                n = "0" + n;
+            }
+            document.getElementById("time2").innerHTML = parseInt(times / 60) + ":" + n;
+            muName()
+            if (isPlay) {
+                au.play()
+            } else {
+                au.pause()
+            }
+            show()
+       }  
+   }    
+}
+
+function clickLeft(sindexhtmlXcodereactr) {
+    console.log(str)
+    document.getElementById("time1").innerHTML = "0:00";
+    document.getElementById("filling").style.width = 0;
+    degs = 0
+    index--;
+    if (index >= 0 ) {
+        au.src = arrMusic[index];
+        au.load()
+        au.oncanplay = function () {
+            var times = duration("#audio")
+            var n = times % 60, t = times % 60;
+            if (n < 10) {
+                n = "0" + n;
+            }
+            document.getElementById("time2").innerHTML = parseInt(times / 60) + ":" + n;
+            muName()
+            if (isPlay) {
+                au.play()
+            }else{
+                au.pause()
+            }
+            show()
+        }
+    } else if (index < 0) {
+        index = arrMusic.length-1;
+        au.src = arrMusic[index];
+        au.load()
+        au.oncanplay = function () {
+            var times = duration("#audio")
+            var n = times % 60, t = times % 60;
+            if (n < 10) {
+                n = "0" + n;
+            }
+            document.getElementById("time2").innerHTML = parseInt(times / 60) + ":" + n;
+            muName()
+            if (isPlay) {
+                au.play()
+            } else {
+                au.pause()
+            }
+            show()
+        }
+    }
+    
+}
+muName()
+ var songWord = [];
+
+function song () {
+    var content = document.getElementById("song1").innerHTML;
+    var array = content.split("\n");
+    for (let i = 0; i < array.length; i++) {
+        var temp = array[i];
+        var tempnum = temp.split(":")[0].replace("[","")
+        if (!isNaN(tempnum)) {
+            var timearr = temp.split("]")[0].replace("[","").split(":");
+            var min = parseInt(timearr[0]);
+            var seconds = parseFloat(timearr[1])+min*60
+            var text = temp.split("]")[1]
+            var obj = {
+                time: seconds,
+                text: text
+            };
+            songWord.push(obj)  
+        } 
+    }
+}
+song()
+function show() {
+    var word8 = document.getElementById("musicSrc8");
+    setInterval(function () { 
+        var str = getwordsbytime(au.currentTime)     
+        // console.log(str)  
+        if (str != "") {
+            word8.innerHTML = str ;
+        } 
+    },1000)
+}
+
+function getwordsbytime(second) {
+    for(var j in songWord){
+        var obj = songWord[j]
+        // console.log(obj)
+        if (second > obj.time) {
+            continue
+        }else if(j>0){
+            return songWord[j-1].text
+        }
+    }
+} 
+// ******获取键盘按键*****************************************
+document.onkeydown = function(event){
+    // console.log(event)
+    // console.log(event.key)
+    // console.log(event.keyCode)
+    // console.log(event.code)
+    return event.key
+}
+// console.log(stringfyQueryString({name:"www",age:20,like:"red",color:"green"}))
+    
+function wait(duration) {
+    return new Promise(function (resolve,reject) {
+        setTimeout(resolve,duration)
+    })
+}
+wait(5000).then(function(){
+    // alert('hello')
+}).then(function(){
+    console.log('world')
+}).catch(function(err){
+    console.log(err)
+})
+function fun1() {
+    let sym0 = Symbol("o_o?");
+    let sym1 = Symbol("o_o?");
+    let obj = {
+        [sym0]: "heheda",
+        [sym1]: "qwert",
+    }
+    for (let prop of Object.getOwnPropertySymbols(obj)) {
+        //prop就是Symbol的名字
+        console.log(obj[prop]); //输出：heheda
+    };
+    console.log(Reflect.ownKeys(obj));
+
+}
+fun1()
+var obj = {}
+obj[Symbol.iterator] = function* () {
+    yield  1;
+    yield  2;
+    yield  3;
+}
+console.log([...obj])
+var obj = ("user",{"name":"aaa"})
+obj1={"name":"aaa"}
+console.log(obj == obj1 )
+console.log(obj , obj1 )
+
+
+</script>
+</html>
